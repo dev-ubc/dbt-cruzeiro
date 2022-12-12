@@ -10,7 +10,7 @@ with base_cursos as (
         manha,
         tarde,
         noite
-    from {{ source('raw_cursos', 'cursos') }}
+    from {{ source('raw_chatweb', 'cursos') }}
 
 )
 

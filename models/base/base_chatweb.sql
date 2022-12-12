@@ -35,8 +35,7 @@ with base_chatweb as (
         valordivida,
         oferta,
         data
-    from {{ source('raw_chatweb', 'chatweb') }}
-
+    from {{ source('raw_chatweb', 'chat_web') }}
 )
 
 select * from base_chatweb

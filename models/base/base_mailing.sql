@@ -36,7 +36,7 @@ with base_mailing as (
         valordivida,
         oferta,
         data
-    from {{ source('raw_mailing', 'mailing') }}
+    from {{ source('raw_chatweb', 'tab_mailing') }}
 
 )
 
