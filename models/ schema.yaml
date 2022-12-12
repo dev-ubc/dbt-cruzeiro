@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: raw_chatweb
+    schema: cruzeiro_schema
+    database: CRUZEIRO_DATABASE
+    description: A replica of database cruzeiro.
+    tables:
+      - name: chat_web
+        columns:
+          - name: _airbyte_chat_web_hashid
+            description: Hash column based on the values in the record.
+            tests:
+              - unique
+              - not_null
+
+      - name: tab_mailing
+        columns:
+          - name: _airbyte_tab_mailing_hashid
+            description: Hash column based on the values in the record.
+            tests:
+              - unique
+              - not_null
+
+      - name: cursos
+        columns:
+          - name: _airbyte_cursos_hashid
+            description: Hash column based on the values in the record.
+            tests:
+              - unique
+              - not_null
+     
+
+models:
+  - name: base_chatweb
+    config:
+      materialized: view  
+
+  - name: base_cursos
+    config:
+      materialized: view   
+
+  - name: base_mailing
+    config:
+      materialized: view
